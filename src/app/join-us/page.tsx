@@ -5,6 +5,7 @@ import {useState} from 'react';
 import {Input} from "@/components/ui/input";
 import {Label} from "@/components/ui/label";
 import {Button} from "@/components/ui/button";
+import {addUser} from "@/services/firebase";
 
 export default function JoinUs() {
   const router = useRouter();
@@ -23,30 +24,39 @@ export default function JoinUs() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here (e.g., sending data to a server)
-    console.log('Form Data:', formData);
-    // Optionally, reset the form after submission
-    setFormData({
-      fullName: '',
-      phoneNumber: '',
-      address: '',
-      password: '',
-    });
+    try {
+      // Add user data to Firestore
+      await addUser(formData);
+      console.log('User registered successfully!');
+      // Optionally, reset the form after successful submission
+      setFormData({
+        fullName: '',
+        phoneNumber: '',
+        address: '',
+        password: '',
+      });
+    } catch (error) {
+      console.error('Error registering user:', error);
+      // Handle error (e.g., display an error message to the user)
+    }
   };
 
   return (
     <div className="min-h-screen"
          style={{
-           backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/fir-studio-app.appspot.com/o/orange-background.jpg?alt=media&token=5315d853-0c04-4a55-a9ff-584b7b9a111d')`,
+           backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/fir-studio-app.appspot.com/o/2560x1440-344415-aesthetic-wallpapers.jpg?alt=media&token=ef98498a-55a3-4829-b06b-92f9f200b95f')`,
            opacity: 0.9,
            backgroundSize: 'cover',
            backgroundPosition: 'center',
            backgroundRepeat: 'no-repeat',
          }}>
       <div className="flex flex-col items-center justify-center py-24">
-        <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <div className=" p-8 rounded-lg  w-full max-w-md"
+             style={{
+               backgroundColor: 'rgba(255, 165, 0, 0.6)', // Orange with 60% opacity
+             }}>
           <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">
             Join Beyond Books Library
           </h2>
@@ -128,4 +138,3 @@ export default function JoinUs() {
     </div>
   );
 }
-
