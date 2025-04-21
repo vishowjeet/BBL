@@ -46,7 +46,7 @@ export default function Home() {
           </div>
         </div>
         <div className="container relative z-10 text-center">
-          <h1 className="mb-4 text-5xl font-bold text-black">
+          <h1 className="mb-4 text-5xl font-bold text-black" style={{ fontFamily: "Untitled Sans", textTransform: 'uppercase' }}>
             Beyond Books Library
           </h1>
           <p className="mb-8 text-lg text-black bg-white px-4 py-2 rounded-md inline-block">
