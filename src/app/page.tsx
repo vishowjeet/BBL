@@ -43,7 +43,7 @@ export default function Home() {
           <h1 className="mb-4 text-5xl font-bold text-black">
             Beyond Books Library
           </h1>
-          <p className="mb-8 text-lg text-gray-300">
+          <p className="mb-8 text-lg text-white bg-blue-500 px-4 py-2 rounded-md inline-block">
             Your hub for affordable education and growth.
           </p>
           <div className="flex items-center justify-center space-x-4">
