@@ -25,11 +25,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Clock */}
-      <div className="absolute top-4 left-4 text-gray-800 font-semibold">
-        {currentTime}
-      </div>
-
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center py-24 overflow-hidden" // Added overflow-hidden
@@ -56,12 +51,17 @@ export default function Home() {
           <p className="mb-8 text-lg text-gray-300">
             Your hub for affordable education and growth.
           </p>
-          <a
-            href="#services"
-            className="rounded-full bg-white px-8 py-3 font-semibold text-black shadow-md transition-colors hover:bg-accent-foreground hover:text-white"
-          >
-            Explore Our Services
-          </a>
+          <div className="flex items-center justify-center space-x-4">
+            <div className="rounded-full bg-white px-8 py-3 font-semibold text-black shadow-md">
+              {currentTime}
+            </div>
+            <a
+              href="#services"
+              className="rounded-full bg-white px-8 py-3 font-semibold text-black shadow-md transition-colors hover:bg-accent-foreground hover:text-white"
+            >
+              Explore Our Services
+            </a>
+          </div>
         </div>
       </section>
 
