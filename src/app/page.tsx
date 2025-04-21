@@ -1,5 +1,5 @@
-'use client'
-//TODO: User provided an incomplete request. They asked to "Make the following changes to my app: can you do that for me?" which is not actionable without knowing what specific changes they want.
+'use client';
+
 import {
   BookOpen,
   Calendar,
@@ -10,9 +10,11 @@ import {
   Computer,
 } from 'lucide-react';
 import {useState, useEffect} from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const [currentTime, setCurrentTime] = useState<string | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -43,7 +45,7 @@ export default function Home() {
         {/* Join Us Button */}
         <div className="absolute top-4 right-4 text-gray-800 font-semibold" style={{ transform: 'scale(0.7)' }}>
           <div className="rounded-full bg-white px-8 py-3 font-semibold text-black shadow-md">
-            Join Us
+             <button onClick={() => router.push('/join-us')}>Join Us</button>
           </div>
         </div>
         <div className="container relative z-10 text-center">
