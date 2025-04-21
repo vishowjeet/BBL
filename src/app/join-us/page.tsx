@@ -14,7 +14,9 @@ export default function JoinUs() {
     phoneNumber: '',
     address: '',
     password: '',
+    email: '', // Added email field
   });
+  const [error, setError] = useState(''); // State to hold error messages
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {name, value} = e.target;
@@ -26,6 +28,7 @@ export default function JoinUs() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(''); // Clear any previous errors
     try {
       // Add user data to Firestore
       await addUser(formData);
@@ -36,10 +39,15 @@ export default function JoinUs() {
         phoneNumber: '',
         address: '',
         password: '',
+        email: '', // Also reset the email field
       });
-    } catch (error) {
-      console.error('Error registering user:', error);
-      // Handle error (e.g., display an error message to the user)
+    } catch (err: any) {
+      if (err.message === 'Email already in use') {
+        setError('An account with this email already exists. Please sign in.');
+      } else {
+        console.error('Error registering user:', err);
+        setError('An error occurred during registration. Please try again.');
+      }
     }
   };
 
@@ -65,6 +73,7 @@ export default function JoinUs() {
           <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">
             Join Beyond Books Library
           </h2>
+          {error && <p className="text-red-500 text-sm mb-4">{error}</p>} {/* Display error message */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div>
               <Label htmlFor="fullName" className="block text-gray-700 text-sm font-bold mb-2">
@@ -78,6 +87,23 @@ export default function JoinUs() {
                 onChange={handleChange}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder="Enter your full name"
+                style={{ backgroundColor: '#fff' }}
+                required
+              />
+            </div>
+            {/* Email Field */}
+            <div>
+              <Label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
+                Email Address
+              </Label>
+              <Input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter your email address"
                 style={{ backgroundColor: '#fff' }}
                 required
               />

@@ -1,7 +1,7 @@
 'use server';
 
 import {initializeApp, getApps} from 'firebase/app';
-import {getFirestore, collection, addDoc} from 'firebase/firestore';
+import {getFirestore, collection, addDoc, query, where, getDocs} from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -20,10 +20,21 @@ const db = getFirestore(app);
 
 async function addUser(data: any) {
   try {
+    // Check if the email already exists in the database
+    const usersRef = collection(db, "users");
+    const q = query(usersRef, where("email", "==", data.email));
+    const querySnapshot = await getDocs(q);
+
+    if (!querySnapshot.empty) {
+      // If a document with the email exists, it means the email is already in use
+      throw new Error('Email already in use');
+    }
+
+    // If the email doesn't exist, add the new user
     const docRef = await addDoc(collection(db, "users"), data);
     console.log("Document written with ID: ", docRef.id);
     return docRef.id;
-  } catch (e) {
+  } catch (e: any) {
     console.error("Error adding document: ", e);
     throw e;
   }
