@@ -45,7 +45,7 @@ export default function Home() {
         </video>
         <div className="absolute inset-0 bg-black opacity-60"></div>
         {/* Clock */}
-        <div className="absolute top-4 left-4 text-gray-800 font-semibold">
+        <div className="absolute top-4 left-4 text-gray-800 font-semibold" style={{ transform: 'scale(0.7)' }}>
           <div className="rounded-full bg-white px-8 py-3 font-semibold text-black shadow-md">
             {currentTime}
           </div>
@@ -196,4 +196,3 @@ function ServiceCard({title, description, icon}: ServiceCardProps) {
     </div>
   );
 }
-
