@@ -44,6 +44,12 @@ export default function Home() {
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black opacity-60"></div>
+        {/* Clock */}
+        <div className="absolute top-4 left-4 text-gray-800 font-semibold">
+          <div className="rounded-full bg-white px-8 py-3 font-semibold text-black shadow-md">
+            {currentTime}
+          </div>
+        </div>
         <div className="container relative z-10 text-center">
           <h1 className="mb-4 text-5xl font-bold text-black">
             Beyond Books Library
@@ -52,9 +58,6 @@ export default function Home() {
             Your hub for affordable education and growth.
           </p>
           <div className="flex items-center justify-center space-x-4">
-            <div className="rounded-full bg-white px-8 py-3 font-semibold text-black shadow-md">
-              {currentTime}
-            </div>
             <a
               href="#services"
               className="rounded-full bg-white px-8 py-3 font-semibold text-black shadow-md transition-colors hover:bg-accent-foreground hover:text-white"
@@ -193,3 +196,4 @@ function ServiceCard({title, description, icon}: ServiceCardProps) {
     </div>
   );
 }
+
