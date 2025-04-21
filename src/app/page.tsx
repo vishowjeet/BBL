@@ -39,6 +39,12 @@ export default function Home() {
             {currentTime}
           </div>
         </div>
+        {/* Join Us Button */}
+        <div className="absolute top-4 right-4 text-gray-800 font-semibold" style={{ transform: 'scale(0.7)' }}>
+          <div className="rounded-full bg-white px-8 py-3 font-semibold text-black shadow-md">
+            Join Us
+          </div>
+        </div>
         <div className="container relative z-10 text-center">
           <h1 className="mb-4 text-5xl font-bold text-black">
             Beyond Books Library
