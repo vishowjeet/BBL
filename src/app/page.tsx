@@ -1,9 +1,33 @@
-
-import { BookOpen, Calendar, CheckCircle, Contact2, Lightbulb, Newspaper, Computer } from 'lucide-react';
+'use client'
+import {
+  BookOpen,
+  Calendar,
+  CheckCircle,
+  Contact2,
+  Lightbulb,
+  Newspaper,
+  Computer,
+} from 'lucide-react';
+import {useState, useEffect} from 'react';
 
 export default function Home() {
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Clock */}
+      <div className="absolute top-4 left-4 text-gray-800 font-semibold">
+        {currentTime.toLocaleTimeString()}
+      </div>
+
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center py-24 overflow-hidden" // Added overflow-hidden
@@ -15,7 +39,10 @@ export default function Home() {
           muted
           className="absolute inset-0 object-cover object-center w-full h-full opacity-30" // Reduced opacity
         >
-          <source src="https://ak.picdn.net/shutterstock/videos/1073551597/preview/stock-footage-group-of-indian-students-studying-together-in-university-classroom-group-mates-reading-books-and.webm" type="video/webm" />
+          <source
+            src="https://ak.picdn.net/shutterstock/videos/1073551597/preview/stock-footage-group-of-indian-students-studying-together-in-university-classroom-group-mates-reading-books-and.webm"
+            type="video/webm"
+          />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black opacity-60"></div>
@@ -119,10 +146,14 @@ export default function Home() {
               <br />
               <strong>Phone:</strong> +919661677051
             </p>
-            <a href="https://wa.me/7667024975?text=urlencodedtext" target="_blank" rel="noopener noreferrer">
-            <button className="rounded-full bg-primary px-6 py-2 font-semibold text-white shadow-md transition-colors hover:bg-blue-700">
-              Contact Now
-            </button>
+            <a
+              href="https://wa.me/7667024975?text=urlencodedtext"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="rounded-full bg-primary px-6 py-2 font-semibold text-white shadow-md transition-colors hover:bg-blue-700">
+                Contact Now
+              </button>
             </a>
           </div>
         </div>
@@ -150,7 +181,7 @@ interface ServiceCardProps {
   icon: React.ReactNode;
 }
 
-function ServiceCard({ title, description, icon }: ServiceCardProps) {
+function ServiceCard({title, description, icon}: ServiceCardProps) {
   return (
     <div className="rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105">
       <div className="mb-4">{icon}</div>
