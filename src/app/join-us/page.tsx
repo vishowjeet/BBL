@@ -14,6 +14,7 @@ export default function JoinUs() {
     phoneNumber: '',
     address: '',
     password: '',
+    confirmPassword: '', // Added confirmPassword field
     email: '', // Added email field
   });
   const [error, setError] = useState(''); // State to hold error messages
@@ -29,6 +30,12 @@ export default function JoinUs() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(''); // Clear any previous errors
+
+    if (formData.password !== formData.confirmPassword) {
+      setError('Passwords do not match');
+      return;
+    }
+
     try {
       // Add user data to Firestore
       await addUser(formData);
@@ -39,6 +46,7 @@ export default function JoinUs() {
         phoneNumber: '',
         address: '',
         password: '',
+        confirmPassword: '',
         email: '', // Also reset the email field
       });
     } catch (err: any) {
@@ -151,6 +159,22 @@ export default function JoinUs() {
                 onChange={handleChange}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder="Enter your password"
+                style={{ backgroundColor: '#fff' }}
+                required
+              />
+            </div>
+            <div>
+              <Label htmlFor="confirmPassword" className="block text-gray-700 text-sm font-bold mb-2">
+                Confirm Password
+              </Label>
+              <Input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Confirm your password"
                 style={{ backgroundColor: '#fff' }}
                 required
               />
