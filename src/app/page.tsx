@@ -1,4 +1,5 @@
 'use client'
+//TODO: User provided an incomplete request. They asked to "Make the following changes to my app: can you do that for me?" which is not actionable without knowing what specific changes they want.
 import {
   BookOpen,
   Calendar,
