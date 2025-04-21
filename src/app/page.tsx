@@ -43,13 +43,13 @@ export default function Home() {
           <h1 className="mb-4 text-5xl font-bold text-black">
             Beyond Books Library
           </h1>
-          <p className="mb-8 text-lg text-white bg-blue-500 px-4 py-2 rounded-md inline-block">
+          <p className="mb-8 text-lg text-black bg-white px-4 py-2 rounded-md inline-block">
             Your hub for affordable education and growth.
           </p>
           <div className="flex items-center justify-center space-x-4">
             <a
               href="#services"
-              className="rounded-full bg-white px-8 py-3 font-semibold text-black shadow-md transition-colors hover:bg-accent-foreground hover:text-white"
+              className="rounded-full bg-white px-8 py-3 font-semibold text-black shadow-md transition-colors hover:bg-black hover:text-white"
             >
               Explore Our Services
             </a>
@@ -146,7 +146,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="rounded-full bg-primary px-6 py-2 font-semibold text-white shadow-md transition-colors hover:bg-blue-700">
+              <button className="rounded-full bg-primary px-6 py-2 font-semibold text-white shadow-md transition-colors hover:bg-orange-500">
                 Contact Now
               </button>
             </a>
