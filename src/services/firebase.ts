@@ -29,4 +29,4 @@ async function addUser(data: any) {
   }
 }
 
-export {app, db, addUser};
+export {addUser};
