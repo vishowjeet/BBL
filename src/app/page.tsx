@@ -7,7 +7,7 @@ export default function Home() {
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center py-24"
-        style={{ backgroundImage: 'url(https://picsum.photos/1920/1080)' }}
+        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1507842214779-18593ca0119b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)' }}
       >
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="container relative z-10 text-center">
@@ -110,9 +110,11 @@ export default function Home() {
               <br />
               <strong>Phone:</strong> +919661677051
             </p>
+            <a href="https://wa.me/7667024975?text=urlencodedtext" target="_blank" rel="noopener noreferrer">
             <button className="rounded-full bg-primary px-6 py-2 font-semibold text-white shadow-md transition-colors hover:bg-blue-700">
               Contact Now
             </button>
+            </a>
           </div>
         </div>
       </section>
