@@ -40,7 +40,6 @@ export default function JoinUs() {
     <div className="min-h-screen"
          style={{
            backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/fir-studio-app.appspot.com/o/orange-background.jpg?alt=media&token=5315d853-0c04-4a55-a9ff-584b7b9a111d')`,
-           backgroundColor: '#ffa500',
            opacity: 0.9,
            backgroundSize: 'cover',
            backgroundPosition: 'center',
@@ -120,7 +119,7 @@ export default function JoinUs() {
           </form>
           <Button
             onClick={() => router.push('/')}
-            className="mt-6 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="mt-6 bg-primary hover:bg-orange-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
             Home
           </Button>
@@ -129,3 +128,4 @@ export default function JoinUs() {
     </div>
   );
 }
+
