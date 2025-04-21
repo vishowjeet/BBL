@@ -28,22 +28,11 @@ export default function Home() {
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center py-24 overflow-hidden" // Added overflow-hidden
-        style={{ backgroundColor: '#ffa500' }}
+        style={{
+          backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/fir-studio-app.appspot.com/o/orange-background.jpg?alt=media&token=5315d853-0c04-4a55-a9ff-584b7b9a111d')`,
+          backgroundColor: '#ffa500',
+        }}
       >
-        {/* Background Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          className="absolute inset-0 object-cover object-center w-full h-full opacity-30" // Reduced opacity
-        >
-          <source
-            src="https://ak.picdn.net/shutterstock/videos/1073551597/preview/stock-footage-group-of-indian-students-studying-together-in-university-classroom-group-mates-reading-books-and.webm"
-            type="video/webm"
-          />
-          Your browser does not support the video tag.
-        </video>
-        <div className="absolute inset-0 bg-black opacity-60"></div>
         {/* Clock */}
         <div className="absolute top-4 left-4 text-gray-800 font-semibold" style={{ transform: 'scale(0.7)' }}>
           <div className="rounded-full bg-white px-8 py-3 font-semibold text-black shadow-md">
