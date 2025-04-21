@@ -34,84 +34,96 @@ export default function JoinUs() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">
-          Join Beyond Books Library
-        </h2>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <div>
-            <label htmlFor="fullName" className="block text-gray-700 text-sm font-bold mb-2">
-              Full Name
-            </label>
-            <input
-              type="text"
-              id="fullName"
-              name="fullName"
-              value={formData.fullName}
-              onChange={handleChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Enter your full name"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="phoneNumber" className="block text-gray-700 text-sm font-bold mb-2">
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              id="phoneNumber"
-              name="phoneNumber"
-              value={formData.phoneNumber}
-              onChange={handleChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Enter your phone number"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="address" className="block text-gray-700 text-sm font-bold mb-2">
-              Address
-            </label>
-            <textarea
-              id="address"
-              name="address"
-              value={formData.address}
-              onChange={handleChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Enter your address"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="password" className="block text-gray-700 text-sm font-bold mb-2">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Enter your password"
-              required
-            />
-          </div>
+    <div className="min-h-screen bg-ffa500">
+      <div className="absolute top-4 left-4 text-gray-800 font-semibold transform scale-75">
+        <div className="rounded-full bg-white px-8 py-3 font-semibold text-black shadow-md">
+          Digital Clock
+        </div>
+      </div>
+      <div className="container relative z-10 text-center">
+        <h1 className="mb-4 text-5xl font-bold text-black" style={{ fontFamily: "Untitled Sans", textTransform: 'uppercase' }}>
+          Beyond Books Library
+        </h1>
+      </div>
+      <div className="flex flex-col items-center justify-center">
+        <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+          <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">
+            Join Beyond Books Library
+          </h2>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <div>
+              <label htmlFor="fullName" className="block text-gray-700 text-sm font-bold mb-2">
+                Full Name
+              </label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="phoneNumber" className="block text-gray-700 text-sm font-bold mb-2">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phoneNumber"
+                name="phoneNumber"
+                value={formData.phoneNumber}
+                onChange={handleChange}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter your phone number"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="address" className="block text-gray-700 text-sm font-bold mb-2">
+                Address
+              </label>
+              <textarea
+                id="address"
+                name="address"
+                value={formData.address}
+                onChange={handleChange}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter your address"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="password" className="block text-gray-700 text-sm font-bold mb-2">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              className="bg-primary hover:bg-orange-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Register
+            </button>
+          </form>
           <button
-            type="submit"
-            className="bg-primary hover:bg-orange-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            onClick={() => router.push('/')}
+            className="mt-6 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
-            Register
+            Home
           </button>
-        </form>
-        <button
-          onClick={() => router.push('/')}
-          className="mt-6 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        >
-          Home
-        </button>
+        </div>
       </div>
     </div>
   );
