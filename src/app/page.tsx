@@ -11,12 +11,18 @@ import {
 import {useState, useEffect} from 'react';
 
 export default function Home() {
-  const [currentTime, setCurrentTime] = useState(new Date());
+  const [currentTime, setCurrentTime] = useState<string | null>(null);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentTime(new Date());
+      if (typeof window !== 'undefined') {
+        setCurrentTime(new Date().toLocaleTimeString());
+      }
     }, 1000);
+
+    if (typeof window !== 'undefined') {
+      setCurrentTime(new Date().toLocaleTimeString());
+    }
 
     return () => clearInterval(intervalId);
   }, []);
@@ -25,7 +31,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       {/* Clock */}
       <div className="absolute top-4 left-4 text-gray-800 font-semibold">
-        {currentTime.toLocaleTimeString()}
+        {currentTime}
       </div>
 
       {/* Hero Section */}
