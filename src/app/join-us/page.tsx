@@ -37,7 +37,15 @@ export default function JoinUs() {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: 'rgba(255, 165, 0, 0.3)' }}>
+    <div className="min-h-screen"
+         style={{
+           backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/fir-studio-app.appspot.com/o/orange-background.jpg?alt=media&token=5315d853-0c04-4a55-a9ff-584b7b9a111d')`,
+           backgroundColor: '#ffa500',
+           opacity: 0.9,
+           backgroundSize: 'cover',
+           backgroundPosition: 'center',
+           backgroundRepeat: 'no-repeat',
+         }}>
       <div className="flex flex-col items-center justify-center py-24">
         <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
           <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">
