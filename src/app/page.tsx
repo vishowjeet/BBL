@@ -6,9 +6,18 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section
-        className="relative bg-cover bg-center py-24"
-        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1507842214779-18593ca0119b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)' }}
+        className="relative bg-cover bg-center py-24 overflow-hidden" // Added overflow-hidden
       >
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          className="absolute inset-0 object-cover object-center w-full h-full opacity-30" // Reduced opacity
+        >
+          <source src="https://ak.picdn.net/shutterstock/videos/1073551597/preview/stock-footage-group-of-indian-students-studying-together-in-university-classroom-group-mates-reading-books-and.webm" type="video/webm" />
+          Your browser does not support the video tag.
+        </video>
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="container relative z-10 text-center">
           <h1 className="mb-4 text-5xl font-bold text-white">
