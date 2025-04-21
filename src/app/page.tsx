@@ -15,14 +15,10 @@ export default function Home() {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      if (typeof window !== 'undefined') {
-        setCurrentTime(new Date().toLocaleTimeString());
-      }
+      setCurrentTime(new Date().toLocaleTimeString());
     }, 1000);
 
-    if (typeof window !== 'undefined') {
-      setCurrentTime(new Date().toLocaleTimeString());
-    }
+    setCurrentTime(new Date().toLocaleTimeString());
 
     return () => clearInterval(intervalId);
   }, []);
@@ -37,6 +33,7 @@ export default function Home() {
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center py-24 overflow-hidden" // Added overflow-hidden
+        style={{ backgroundColor: '#ffa500' }}
       >
         {/* Background Video */}
         <video
@@ -53,7 +50,7 @@ export default function Home() {
         </video>
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="container relative z-10 text-center">
-          <h1 className="mb-4 text-5xl font-bold text-white">
+          <h1 className="mb-4 text-5xl font-bold text-black">
             Beyond Books Library
           </h1>
           <p className="mb-8 text-lg text-gray-300">
@@ -61,7 +58,7 @@ export default function Home() {
           </p>
           <a
             href="#services"
-            className="rounded-full bg-accent px-8 py-3 font-semibold text-gray-800 shadow-md transition-colors hover:bg-accent-foreground hover:text-white"
+            className="rounded-full bg-white px-8 py-3 font-semibold text-black shadow-md transition-colors hover:bg-accent-foreground hover:text-white"
           >
             Explore Our Services
           </a>
