@@ -21,7 +21,7 @@ body {
     --secondary-foreground: 222.2 47% 11.2%;
     --muted: 210 22% 94%;
     --muted-foreground: 215.4 16% 46.9%;
-    --accent: 43 87% 59%;
+    --accent: 30 100% 50%;
     --accent-foreground: 222.2 47% 11.2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -47,7 +47,7 @@ body {
     --foreground: 222.2 84% 4.9%;
     --primary: 0 0% 0%; /* Calming Blue */
     --primary-foreground: 210 40% 98%;
-    --accent: 43 87% 59%; /* Warm Yellow */
+    --accent: 30 100% 50%; /* Warm Yellow */
     --accent-foreground: 222.2 47% 11.2%;
   }
   .dark {

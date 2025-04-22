@@ -75,17 +75,17 @@ export default function JoinUs() {
         <div
           className="p-8 rounded-lg w-full max-w-md"
           style={{
-            backgroundColor: 'rgba(255, 165, 0, 0.8)',
+            backgroundColor: '#FF8000',
           }}
         >
-          <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">
+          <h2 className="text-2xl font-semibold text-black text-center mb-6">
             Join Beyond Books Library
           </h2>
           {error && <p className="text-red-500 text-sm mb-4">{error}</p>} {/* Display error message */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div>
-              <Label htmlFor="fullName" className="block text-gray-700 text-sm font-bold mb-2">
-                Full Name
+              <Label htmlFor="fullName" className="block text-black text-sm font-bold mb-2">
+                Full Name:
               </Label>
               <Input
                 type="text"
@@ -101,8 +101,8 @@ export default function JoinUs() {
             </div>
             {/* Email Field */}
             <div>
-              <Label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
-                Email Address
+              <Label htmlFor="email" className="block text-black text-sm font-bold mb-2">
+                Email Address:
               </Label>
               <Input
                 type="email"
@@ -117,8 +117,8 @@ export default function JoinUs() {
               />
             </div>
             <div>
-              <Label htmlFor="phoneNumber" className="block text-gray-700 text-sm font-bold mb-2">
-                Phone Number
+              <Label htmlFor="phoneNumber" className="block text-black text-sm font-bold mb-2">
+                Phone Number:
               </Label>
               <Input
                 type="tel"
@@ -133,8 +133,8 @@ export default function JoinUs() {
               />
             </div>
             <div>
-              <Label htmlFor="address" className="block text-gray-700 text-sm font-bold mb-2">
-                Address
+              <Label htmlFor="address" className="block text-black text-sm font-bold mb-2">
+                Address:
               </Label>
               <textarea
                 id="address"
@@ -148,8 +148,8 @@ export default function JoinUs() {
               />
             </div>
             <div>
-              <Label htmlFor="password" className="block text-gray-700 text-sm font-bold mb-2">
-                Password
+              <Label htmlFor="password" className="block text-black text-sm font-bold mb-2">
+                Password:
               </Label>
               <Input
                 type="password"
@@ -164,8 +164,8 @@ export default function JoinUs() {
               />
             </div>
             <div>
-              <Label htmlFor="confirmPassword" className="block text-gray-700 text-sm font-bold mb-2">
-                Confirm Password
+              <Label htmlFor="confirmPassword" className="block text-black text-sm font-bold mb-2">
+                Confirm Password:
               </Label>
               <Input
                 type="password"
@@ -181,7 +181,7 @@ export default function JoinUs() {
             </div>
             <Button
               type="submit"
-              className="bg-primary hover:bg-orange-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-primary hover:bg-[#FF8000] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Register
             </Button>
@@ -189,13 +189,13 @@ export default function JoinUs() {
           <div className="flex justify-between mt-6">
             <Button
               onClick={() => router.push('/')}
-              className=" bg-primary hover:bg-orange-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-transparent text-white hover:bg-white hover:text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Home
             </Button>
             <Button
               onClick={() => router.push('/sign-in')}
-              className=" bg-primary hover:bg-orange-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className=" bg-black hover:bg-[#FFFFFF] hover:text-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Sign In
             </Button>

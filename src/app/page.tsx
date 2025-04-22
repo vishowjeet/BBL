@@ -33,7 +33,7 @@ export default function Home() {
         className="relative bg-cover bg-center py-24 overflow-hidden" // Added overflow-hidden
         style={{
           backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/fir-studio-app.appspot.com/o/orange-background.jpg?alt=media&token=5315d853-0c04-4a55-a9ff-584b7b9a111d')`,
-          backgroundColor: '#ffa500',
+          backgroundColor: '#FF8000',
         }}
       >
         {/* Clock */}
@@ -155,7 +155,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="rounded-full bg-primary px-6 py-2 font-semibold text-white shadow-md transition-colors hover:bg-orange-500">
+              <button className="rounded-full bg-primary px-6 py-2 font-semibold text-white shadow-md transition-colors hover:bg-[#FF8000]">
                 Contact Now
               </button>
             </a>
