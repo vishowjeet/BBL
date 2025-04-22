@@ -188,12 +188,14 @@ export default function JoinUs() {
           </form>
           <div className="flex justify-between mt-6">
             <Button
-              onClick={() => router.push('/')}
+            onClick={() => router.push('/')}
               className="bg-black text-white hover:bg-white hover:text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Home
             </Button>
             <Button
+            
+            
               onClick={() => router.push('/sign-in')}
               className=" bg-black hover:bg-[#FFFFFF] hover:text-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
