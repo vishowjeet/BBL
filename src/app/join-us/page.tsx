@@ -181,7 +181,7 @@ export default function JoinUs() {
             </div>
             <Button
               type="submit"
-              className="bg-primary hover:bg-[#FF8000] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-primary text-white hover:bg-white hover:text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Register
             </Button>
